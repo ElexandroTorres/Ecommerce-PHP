@@ -30,5 +30,18 @@
 	} else {
 		echo "Lista Vazia";
 	}
-
+?>
+<!DOCTYPE html>
+<html>
+	<body>
+		<form action="" method="post">
+			<button type="submit" name="novoProduto">Novo Produto</button>
+		</form>
+	</body>
+</html>
+<?php  
+	if(isset($_POST['novoProduto'])) {
+		header("Location: http://localhost/ecommerce/Views/produto/cadastro_produto.php");
+		echo "deu bom botão";
+	}
 ?>

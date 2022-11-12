@@ -64,20 +64,24 @@ class Produto {
 		return $arrayProdutos;
 	}
 	
-	/*
+	
 	public function Cadastrar() {
 		$objConexao = new Conexao();
 		$conexao = $objConexao->getConexao();
 
-		$sqlComand = "INSERT INTO Usuarios (Nome, Email, Senha) VALUES ('$this->nome', '$this->email', '$this->senha')";
+		$sql = "INSERT INTO Produtos (Descricao, Valor, Categoria, Quantidade) 
+				VALUES ('$this->descricao', '$this->valor', '$this->categoria', '$this->quantidade')";
 
-		if(mysqli_query($conexao, $sqlComand)) {
-			return "Sucesso";
+		if(mysqli_query($conexao, $sql)) {
+			echo "Produto adicionado com sucesso";
+			mysqli_close($conexao);
+			return true;
 		} else {
-			return "Erro";
+			echo "Erro ao adicionar produto";
+			mysqli_close($conexao);
+			return false;
 		}
-		mysqli_close($conexao);
 	}
-	*/
+	
 }
 ?>

@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
-<body>
-	<form action="" method="post">
-		Nome: <input type="text" name="nome" value=""> <br>
-		Email: <input type="text" name="email" value=""> <br>
-		Senha: <input type="text" name="senha" value=""> <br>
-		<button type="submit" name="cadastrar">Cadastrar</button>
-	</form>
-</body>
+	<body>
+		<form action="" method="post">
+			Nome: <input type="text" name="nome" value=""> <br>
+			Email: <input type="text" name="email" value=""> <br>
+			Senha: <input type="text" name="senha" value=""> <br>
+			<button type="submit" name="cadastrar">Cadastrar</button>
+		</form>
+	</body>
 </html>
 
 <?php

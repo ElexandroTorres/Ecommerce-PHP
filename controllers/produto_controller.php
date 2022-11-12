@@ -7,49 +7,47 @@
 		public function listarProdutos($objProduto) {
 			return $objProduto->Listar();
 		}
-		/*
-		public function cadastrarUsuario($objUsuario) {
-			if(validaNome($objUsuario->getNome()) && validaEmail($objUsuario->getEmail()) && validaSenha($objUsuario->getSenha())) {
-				return $objUsuario->Cadastrar();
-			}	
+
+		public function cadastrarProduto($objProduto) {
+			if(validaDescricao($objProduto->getDescricao()) && validaValor($objProduto->getValor()) 
+				&& validaCategoria($objProduto->getCategoria()) && validaQuantidade($objProduto->getQuantidade())) {
+				return $objProduto->Cadastrar();
+			}
 		}
-		*/
 	}
-	/*
-	function validaSenha($senha) {
-		if($senha == null) {
-			echo "É necessario informar a senha";
+
+	function validaDescricao($descricao) {
+		if($descricao == null) {
+			echo "É necessario adicionar uma descricao para o produto";
 			return false;
-		} elseif(strlen($senha) > 100) {
-			echo "A senha deve conter no maximo 100 caracteres";
-			return false;
-		} else if(strlen($senha) < 4) {
-			echo "A senha deve conter no minimo 4 caracteres";
+		} elseif(strlen($descricao) < 5) {
+			echo "A descrição deve conter pelo menos 5 caracteres";
 			return false;
 		}
 		return true;
 	}
 
-	function validaEmail($email) {
-		if($email == null) {
-			echo "O email é obrigatorio";
-			return false;
-		} elseif(strlen($email) > 100) {
-			echo "O meial de conter no maximo 100 caracteres";
+	function validaValor($valor) {
+		if($valor == null) {
+			echo "É necessario informar um valor para o produto";
 			return false;
 		}
 		return true;
 	}
 
-	function validaNome($nome) {
-		if($nome == null) {
-			echo "O nome é obrigatorio";
+	function validaCategoria($categoria) {
+		if($categoria == null) {
+			echo "É necessario informar a categoria do produto";
 			return false;
-		} elseif(strlen($nome) > 100) {
-			echo "O nome deve conter no maximo 100 caracteres";
-			return false;
-		}
-		return true;	
+		} 
+		return true;
 	}
-	*/
+
+	function validaQuantidade($quantidade) {
+		if($quantidade == null) {
+			echo "É necessario informar a quantidade do produto=";
+			return false;
+		} 
+		return true;
+	}
 ?>
