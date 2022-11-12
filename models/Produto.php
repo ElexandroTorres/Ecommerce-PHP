@@ -82,6 +82,48 @@ class Produto {
 			return false;
 		}
 	}
+
+	public function Editar($id) {
+		$objConexao = new Conexao();
+		$conexao = $objConexao->getConexao();
+
+		$sql = "UPDATE Produtos SET 
+			Descricao = '".$this->descricao."', 
+			Valor = '".$this->valor."', 
+			Categoria = '".$this->categoria."', 
+			Quantidade = '".$this->quantidade."' 
+			WHERE id = ".$id;
+
+		if(mysqli_query($conexao, $sql)) {
+			echo "Sucesso ao atualizar produto";
+			return true;
+		} else {
+			echo "Erro ao tentar atualizar o produto";
+			return false;
+		}
+
+		mysqli_close($conexao);
+	}
+
+	public function Excluir($id) {
+		$objConexao = new Conexao();
+		$conexao = $objConexao->getConexao();
+
+		$sql = "DELETE FROM Produtos WHERE id = ".$id;		
+
+		$resposta = mysqli_query($conexao, $sql);
+
+		if(mysqli_query($conexao, $sql)) {
+			echo "Sucesso ao excluir produto";
+			return true;
+		} else {
+			echo "Erro ao tentar excluir produto";
+			return false;
+		}
+
+		mysqli_close($conexao);
+
+	}
 	
 }
 ?>

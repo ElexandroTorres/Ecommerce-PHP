@@ -117,15 +117,15 @@ class Usuario {
 		$objConexao = new Conexao();
 		$conexao = $objConexao->getConexao();
 
-		$sql = "DELETE FROM Carrinhos WHERE id = ".$id;		
+		$sql = "DELETE FROM Usuarios WHERE id = ".$id;		
 
 		$resposta = mysqli_query($conexao, $sql);
 
 		if(mysqli_query($conexao, $sql)) {
-			echo "Sucesso";
+			echo "Sucesso ao excluir usuario";
 			return true;
 		} else {
-			echo "Erro";
+			echo "Erro ao tentar excluir usuario";
 			return false;
 		}
 

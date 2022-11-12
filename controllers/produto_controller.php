@@ -14,6 +14,10 @@
 				return $objProduto->Cadastrar();
 			}
 		}
+
+		public function excluirProduto($objProduto) {
+			return $objProduto->Excluir($objProduto->getId());
+		}
 	}
 
 	function validaDescricao($descricao) {
